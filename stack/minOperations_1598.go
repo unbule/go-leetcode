@@ -17,9 +17,21 @@ func minOperations(logs []string) int {
 	}
 	return len(stack)
 }
+func minOperations2(logs []string) int {
+	cnt := 0
+	for _, val := range logs {
+		if !strings.Contains(val, ".") {
+			cnt++
+		}
+		if cnt > 0 && strings.Contains(val, "..") {
+			cnt--
+		}
+	}
+	return cnt
+}
 
 func main() {
-	logs := []string{"d1/", "../", "../", "../"}
-	minOperations(logs)
+	logs := []string{"d1/", "../", "./", "d2/"}
 	fmt.Println(minOperations(logs))
+	fmt.Println(minOperations2(logs))
 }
