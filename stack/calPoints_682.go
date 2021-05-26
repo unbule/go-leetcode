@@ -22,7 +22,6 @@ func calPoints(ops []string) int {
 			stack = append(stack, strconv.Itoa(sum))
 		} else {
 			stack = append(stack, val)
-			fmt.Println(stack)
 		}
 	}
 	cnt := 0
@@ -32,8 +31,8 @@ func calPoints(ops []string) int {
 	}
 	return cnt
 }
+
 func main() {
 	ops := []string{"5", "-2", "4", "C", "D", "9", "+", "+"}
 	fmt.Println(calPoints(ops))
-
 }
